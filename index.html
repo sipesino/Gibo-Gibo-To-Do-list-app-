@@ -14,6 +14,7 @@
             <h5>tasks</h5>
         </header>
         <main>
+            <button class="addBtn">+</button>
             <div class="container">
                 <div class="dueToday">
                     <h4>Due Today</h4>
@@ -28,7 +29,32 @@
                     <h4>No Due</h4>
                 </div>
             </div>
-            <button class="addBtn">+</button>
+            <div class="bg-modal">
+                <div class="modal-content">
+                    <h4>Add Task</h4>
+                    <div class="duedate">
+                        <label for="duedate">Due Date</label>
+                        <input
+                            type="datetime-local"
+                            name="duedate"
+                            id="duedate"
+                        />
+                    </div>
+
+                    <form action="">
+                        <textarea
+                            name="addtask"
+                            id=""
+                            cols="30"
+                            rows="10"
+                            placeholder="Description"
+                        ></textarea>
+
+                        <button class="add">Add</button>
+                        <button class="cancel">Cancel</button>
+                    </form>
+                </div>
+            </div>
         </main>
         <script src="./app.js"></script>
     </body>
