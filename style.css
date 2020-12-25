@@ -35,9 +35,9 @@ header {
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .modal-content {
@@ -60,6 +60,8 @@ header {
 
 label {
     width: 30%;
+    font-size: 15px;
+    margin-right: 10px;
 }
 
 input {
@@ -132,6 +134,36 @@ header h5 {
     margin: 0;
 }
 
+.task {
+    min-height: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+        rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    text-align: left;
+    padding: 10px;
+    align-items: center;
+    display: block;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    padding: 0;
+}
+
+.task label {
+    display: inline;
+    width: 100%;
+}
+
+.task label,
+span {
+    text-align: right;
+    font-weight: 300;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
 .addBtn {
     font-size: 40px;
     font-weight: bold;
@@ -164,6 +196,17 @@ header h5 {
         left: 0;
     }
 
+    .task ul li {
+        font-size: 13px;
+    }
+
+    label {
+        font-size: 12px;
+        margin-right: none;
+    }
+    .modal-content {
+        width: 70%;
+    }
     body {
         margin: 0;
     }
