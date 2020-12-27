@@ -16,7 +16,7 @@ a {
     color: #ffa500;
 }
 
-header {
+.header {
     position: fixed;
     top: 0;
     min-height: 25vh;
@@ -56,34 +56,45 @@ header {
 .duedate {
     width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 label {
-    width: 30%;
     font-size: 15px;
-    margin-right: 10px;
+    width: 30%;
 }
 
-input {
-    width: 70%;
+input[type="checkbox"] {
+    width: 5%;
+    transform: scale(1.3);
+}
+
+input[type="datetime-local"] {
+    width: 65%;
     font-family: "Montserrat", sans-serif;
+    padding-left: 5px;
 }
 
 form {
     width: 100%;
+    position: relative;
 }
 
 textarea {
     text-decoration: none;
     resize: none;
     outline: none;
-    width: 90%;
+    width: 100%;
     font-family: "Montserrat", sans-serif;
     padding: 10px;
     margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-.modal-content button {
+.cancel,
+.add {
     font-family: "Montserrat", sans-serif;
     width: 30%;
     margin: 0px 5px;
@@ -125,7 +136,7 @@ main {
     opacity: 0.8;
 }
 
-header h5 {
+.header h5 {
     font-weight: 500;
     font-size: 12px;
     color: #53545d;
@@ -134,34 +145,106 @@ header h5 {
     margin: 0;
 }
 
-.task {
-    min-height: 30px;
-    border-radius: 10px;
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
-        rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-    text-align: left;
-    padding: 10px;
-    align-items: center;
-    display: block;
-}
-
 ul {
-    width: 100%;
-    display: flex;
     padding: 0;
 }
 
-.task label {
-    display: inline;
+.task {
+    flex-grow: 1;
+    min-height: 30px;
+    text-align: left;
+    width: 100%;
+    list-style-type: none;
+}
+
+.desc {
+    padding: 10px 10px 10px 10px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desc span {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.desc p {
+    display: block;
     width: 100%;
 }
 
-.task label,
-span {
-    text-align: right;
-    font-weight: 300;
-    font-size: 13px;
-    opacity: 0.8;
+.content {
+    display: flex;
+}
+
+.content .desc,
+.finEdit,
+.del {
+    display: flex;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+        rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.btns {
+    display: flex;
+}
+
+.btns button {
+    all: unset;
+    padding: 15px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.finEdit {
+    display: flex;
+    flex-direction: column;
+}
+
+.del {
+    display: flex;
+}
+
+#edit {
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#delete {
+    border-radius: 10px;
+    text-align: center;
+}
+
+#finished {
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+}
+
+.content i {
+    transform: scale(1.2);
+}
+
+#finished:hover {
+    background-color: #008000;
+}
+
+#edit:hover {
+    background-color: #1874cd;
+}
+
+#delete:hover {
+    background-color: #990000;
 }
 
 .addBtn {
@@ -180,17 +263,24 @@ span {
         rgba(0, 0, 0, 0.22) 0px 15px 12px;
     transition: 0.2s;
     cursor: pointer;
-    position: fixed;
-    bottom: 3%;
+    position: relative;
+    transform: translateY(50%);
     margin: auto;
 }
 
 .addBtn:hover {
-    transform: scale(1.05);
+    width: 4.5rem;
+    height: 4.5rem;
 }
 
+.empty {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.5;
+}
 @media only screen and (max-width: 768px) {
-    header {
+    .header {
         width: 100%;
         margin: 0;
         left: 0;
