@@ -1,5 +1,5 @@
 <?php
-require 'db_con.php';
+require 'db.php';
 
 if (!$conn) {
     echo 'Cannot connect to server.';
