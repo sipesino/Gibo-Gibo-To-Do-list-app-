@@ -4,7 +4,14 @@ $username = "root";
 $password = "";
 $dbname = "ToDoList";
 
-$conn = mysqli_connect($serverName, $username, $password, $dbname);
+try {
+    $conn = new PDO("mysql:host = $serverName;db_name = $dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'connected!';
+} catch (PDOException $e) {
+    echo "Connection failed : " . $e->getMessage();
+}
+
 
 if (!$conn) {
     echo 'Cannot connect to server.';

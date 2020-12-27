@@ -1,7 +1,9 @@
 let duedate = document.querySelector("#duedate");
 duedate.value = "";
 
-window.onload = function () {};
+window.onload = function () {
+    var loadTask = 
+};
 
 document.querySelector(".addBtn").addEventListener("click", function () {
     document.querySelector(".bg-modal").style.display = "flex";

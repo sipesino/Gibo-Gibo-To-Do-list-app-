@@ -145,27 +145,69 @@ header h5 {
     margin: 0;
 }
 
+ul {
+    padding: 0;
+}
+
 .task {
+    flex-grow: 1;
     min-height: 30px;
-    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    list-style-type: none;
+}
+
+.desc {
+    padding: 0px 0px 0px 10px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+}
+
+.content div {
+    display: flex;
     box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
         rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-    text-align: left;
-    padding: 10px;
-    align-items: center;
-    display: block;
+    border-radius: 10px;
+    margin: 2px;
 }
 
-.task label {
-    display: inline;
+.btns {
+    display: flex;
+    flex-direction: column;
 }
 
-.task label,
-span {
-    text-align: right;
-    font-weight: 300;
-    font-size: 13px;
-    opacity: 0.8;
+.btns button {
+    all: unset;
+    padding: 15px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    color: white;
+    transition: 0.2s;
+}
+
+#delete {
+    border-radius: 0px 0px 10px 10px;
+}
+
+#finished {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.content i {
+    transform: scale(1.2);
+}
+
+.content button:hover {
+    color: #1b262c;
+    background-color: white;
 }
 
 .addBtn {
