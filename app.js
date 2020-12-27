@@ -1,10 +1,6 @@
 let duedate = document.querySelector("#duedate");
 duedate.value = "";
 
-window.onload = function () {
-    var loadTask = 
-};
-
 document.querySelector(".addBtn").addEventListener("click", function () {
     document.querySelector(".bg-modal").style.display = "flex";
     document.querySelector("#duedate").disabled = true;
@@ -37,3 +33,11 @@ Date.prototype.toDateInputValue = function () {
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
     return local.toJSON().slice(0, 10);
 };
+
+function adjust(v) {
+    if (v > 9) {
+        return v.toString();
+    } else {
+        return "0" + v.toString();
+    }
+}
