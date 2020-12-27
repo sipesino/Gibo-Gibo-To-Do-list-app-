@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="style.css" />
         <title>Gibo-Gibo</title>
     </head>
@@ -18,51 +24,45 @@
             <div class="container">
                 <div class="dueToday">
                     <h4>Due Today</h4>
-                    <ul>
-                      
-                    </ul>
+                    <ul></ul>
                 </div>
                 <div class="Overdue">
                     <h4>Overdue</h4>
-                    <ul>
-                      
-                    </ul>
+                    <ul></ul>
                 </div>
                 <div class="Upcoming">
                     <h4>Upcoming</h4>
-                    <ul>
-                      
-                    </ul>
+                    <ul></ul>
                 </div>
                 <div class="noDue">
                     <h4>No Due</h4>
-                    <ul>
-                    </ul>
+                    <ul></ul>
                 </div>
             </div>
             <div class="bg-modal">
                 <div class="modal-content">
                     <h4>Add Task</h4>
-                    <div class="duedate">
-                        <label for="duedate">Due Date</label>
-                        <input
-                            type="datetime-local"
-                            name="duedate"
-                            id="duedate"
-                        />
-                    </div>
-
-                    <form action="">
+                    <form method="POST" action="db.php">
+                        <div class="duedate">
+                            <input type="checkbox" name="check" id="check" />
+                            <label for="duedate">Due Date</label>
+                            <input
+                                type="datetime-local"
+                                name="duedate"
+                                id="duedate"
+                            />
+                        </div>
                         <textarea
-                            name="addtask"
-                            id=""
+                            name="description"
+                            id="description"
                             cols="30"
                             rows="10"
                             placeholder="Description"
+                            required
                         ></textarea>
+                        <input type="submit" value="Add" class="add" />
+                        <input type="button" value="Cancel" class="cancel" />
                     </form>
-                    <button class="add">Add</buttonclass="add">
-                    <button class="cancel">Cancel</button>
                 </div>
             </div>
         </main>
