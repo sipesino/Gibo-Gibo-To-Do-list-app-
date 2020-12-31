@@ -55,7 +55,7 @@ a {
 
 .duedate {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,6 +155,7 @@ ul {
     text-align: left;
     width: 100%;
     list-style-type: none;
+    margin: 5px;
 }
 
 .desc {
@@ -183,12 +184,18 @@ ul {
     display: flex;
 }
 
+<<<<<<< HEAD
+.finEdit,
+.desc {
+=======
 .content .desc,
 .finEdit,
 .del {
     display: flex;
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
     box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
         rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    display: flex;
     border-radius: 10px;
     margin: 2px;
 }
@@ -199,7 +206,7 @@ ul {
 
 .btns button {
     all: unset;
-    padding: 15px;
+    padding: 10px;
     text-decoration: none;
     background: transparent;
     outline: none;
@@ -210,6 +217,12 @@ ul {
 .finEdit {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+}
+
+.content i {
+    transform: scale(1);
+=======
 }
 
 .del {
@@ -229,12 +242,20 @@ ul {
 #finished {
     border-radius: 10px 10px 0px 0px;
     text-align: center;
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
 }
 
-.content i {
-    transform: scale(1.2);
+.finished:hover {
+    background-color: #008000;
 }
 
+<<<<<<< HEAD
+.edit:hover {
+    background-color: #1874cd;
+}
+
+.delete:hover {
+=======
 #finished:hover {
     background-color: #008000;
 }
@@ -244,6 +265,7 @@ ul {
 }
 
 #delete:hover {
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
     background-color: #990000;
 }
 
@@ -271,6 +293,34 @@ ul {
 .addBtn:hover {
     width: 4.5rem;
     height: 4.5rem;
+<<<<<<< HEAD
+}
+
+.edit {
+    text-align: center;
+}
+
+button[name="finished"] {
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+}
+
+button[name="edit"] {
+    text-align: center;
+}
+
+button[name="delete"] {
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+}
+
+.empty {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.5;
+=======
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
 }
 
 .empty {

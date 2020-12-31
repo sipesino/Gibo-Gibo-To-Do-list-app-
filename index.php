@@ -1,4 +1,8 @@
 <?php require 'db.php' ?>
+<<<<<<< HEAD
+<?php require 'loadTasks.php' ?>
+=======
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +14,23 @@
     <meta http-equiv="refresh" content="60">
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/be44f73e1b.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.2.1.min.js"></script>
     <title>Gibo-Gibo</title>
 </head>
 
 <body>
     <main>
         <div class="container">
+<<<<<<< HEAD
+            <div>
+                <?php echo loadTask('Due Today'); ?>
+            </div>
+            <div>
+                <?php echo loadTask('Overdue'); ?>
+            </div>
+            <div>
+                <?php echo loadTask('Upcoming'); ?>
+=======
             <div class="dueToday">
                 <h4>Due Today</h4>
                 <?php $dueToday = $conn->query("SELECT * FROM Tasks WHERE DATE(duedate) = CURDATE() AND TIME(duedate) >= CURTIME() "); ?>
@@ -94,14 +109,13 @@
                         </li>
                     <?php } ?>
                 </ul>
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
             </div>
-            <div class="Upcoming">
-                <h4>Upcoming</h4>
-                <ul></ul>
+            <div>
+                <?php echo loadTask('No Due'); ?>
             </div>
-            <div class="noDue">
-                <h4>No Due</h4>
-                <ul></ul>
+            <div>
+                <?php echo loadTask('Finished'); ?>
             </div>
         </div>
         <div class="header">
@@ -115,19 +129,22 @@
             <div class="modal-content">
                 <h4>Add Task</h4>
                 <form method="POST" action="newTask.php" autocomplete="off">
+<<<<<<< HEAD
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
+=======
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
                     <div class="duedate">
                         <input type="checkbox" name="check" id="check" />
                         <label for="duedate">Due Date</label>
                         <input type="datetime-local" name="duedate" id="duedate" />
                     </div>
-                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
                     <input type="submit" value="Add" class="add" />
                     <input type="button" value="Cancel" class="cancel" />
                 </form>
             </div>
         </div>
     </main>
-    <script src="./app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>

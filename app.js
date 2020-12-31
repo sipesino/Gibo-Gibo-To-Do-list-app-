@@ -1,6 +1,52 @@
 let duedate = document.querySelector("#duedate");
 duedate.value = "";
 
+<<<<<<< HEAD
+$(function () {
+    $(".finished").click(function () {
+        const id = $(this).closest("div").attr("id");
+
+        $.post(
+            "finished.php",
+            {
+                id: id,
+            },
+            (data) => {}
+        );
+        location.reload();
+    });
+
+    $(".delete").click(function () {
+        const id = $(this).closest("div").attr("id");
+
+        $.post(
+            "delete.php",
+            {
+                id: id,
+            },
+            (data) => {}
+        );
+        location.reload();
+    });
+
+    $(".edit").click(function () {
+        const id = $(this).closest("div").attr("id");
+
+        $.post(
+            "edit.php",
+            {
+                id: id,
+                description: description,
+                duedate: duedate,
+            },
+            (data) => {}
+        );
+        location.reload();
+    });
+});
+
+=======
+>>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
 document.querySelector(".addBtn").addEventListener("click", function () {
     document.querySelector(".bg-modal").style.display = "flex";
     document.querySelector("#duedate").disabled = true;
