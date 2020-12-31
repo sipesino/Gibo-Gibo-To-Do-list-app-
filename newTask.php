@@ -1,5 +1,5 @@
 <?php
-require 'db_con.php';
+require 'db.php';
 
 if (!$conn) {
     echo 'Cannot connect to server.';
@@ -18,9 +18,9 @@ if (isset($_POST['check'])) {
 }
 
 if ($conn->query($query)) {
-    echo "<script>console.log('Not Inserted' );</script>";
-} else {
     echo "<script>console.log('Inserted' );</script>";
+} else {
+    echo "<script>console.log('Not Inserted' );</script>";
 }
 
 header("refresh:0; url=index.php?mess=success");
