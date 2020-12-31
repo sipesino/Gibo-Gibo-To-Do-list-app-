@@ -1,8 +1,5 @@
 <?php require 'db.php' ?>
-<<<<<<< HEAD
 <?php require 'loadTasks.php' ?>
-=======
->>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +18,6 @@
 <body>
     <main>
         <div class="container">
-<<<<<<< HEAD
             <div>
                 <?php echo loadTask('Due Today'); ?>
             </div>
@@ -30,86 +26,6 @@
             </div>
             <div>
                 <?php echo loadTask('Upcoming'); ?>
-=======
-            <div class="dueToday">
-                <h4>Due Today</h4>
-                <?php $dueToday = $conn->query("SELECT * FROM Tasks WHERE DATE(duedate) = CURDATE() AND TIME(duedate) >= CURTIME() "); ?>
-                <?php if ($dueToday->rowCount() <= 0) { ?>
-                    <div>
-                        <p class="empty">Empty</p>
-                    </div>
-                <?php } ?>
-                <ul>
-                    <?php while ($task = $dueToday->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <li class="task">
-                            <div class="content">
-                                <div class="desc">
-                                    <?php echo '<p>' . $task['description'] . '</p>' ?>
-                                    <?php
-                                    if (!$task['duedate'] == null) {
-                                        $date = strtotime($task['duedate']);
-                                        $mysqldate = date('M d, Y | g:i A', $date);
-                                        echo '<span>' . $mysqldate . '</span>';
-                                    }
-                                    ?>
-                                </div>
-                                <div class="btns">
-                                    <div class="finEdit">
-                                        <button id="finished">
-                                            <i class="far fa-check-square"></i>
-                                        </button>
-                                        <button id="edit">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </button>
-                                    </div>
-                                    <div class="del">
-                                        <button id="delete">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            <div class="Overdue">
-                <h4>Overdue</h4>
-                <ul>
-                    <?php $overdue = $conn->query("SELECT * FROM Tasks WHERE duedate < CURDATE() AND isFinished = 0"); ?>
-                    <?php while ($task = $overdue->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <li class="task">
-                            <div class="content">
-                                <div class="desc">
-                                    <?php echo '<p>' . $task['description'] . '</p>' ?>
-                                    <?php
-                                    if (!$task['duedate'] == null) {
-                                        $date = strtotime($task['duedate']);
-                                        $mysqldate = date('M d, Y | g:i A', $date);
-                                        echo '<span>' . $mysqldate . '</span>';
-                                    }
-                                    ?>
-                                </div>
-                                <div class="btns">
-                                    <div class="finEdit">
-                                        <button id="finished">
-                                            <i class="far fa-check-square"></i>
-                                        </button>
-                                        <button id="edit">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </button>
-                                    </div>
-                                    <div class="del">
-                                        <button id="delete">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    <?php } ?>
-                </ul>
->>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
             </div>
             <div>
                 <?php echo loadTask('No Due'); ?>
@@ -129,10 +45,7 @@
             <div class="modal-content">
                 <h4>Add Task</h4>
                 <form method="POST" action="newTask.php" autocomplete="off">
-<<<<<<< HEAD
                     <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
-=======
->>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
                     <div class="duedate">
                         <input type="checkbox" name="check" id="check" />
                         <label for="duedate">Due Date</label>

@@ -18,15 +18,9 @@ if (isset($_POST['check'])) {
 }
 
 if ($conn->query($query)) {
-<<<<<<< HEAD
     echo "<script>console.log('Inserted' );</script>";
 } else {
     echo "<script>console.log('Not Inserted' );</script>";
-=======
-    echo "<script>console.log('Not Inserted' );</script>";
-} else {
-    echo "<script>console.log('Inserted' );</script>";
->>>>>>> 751855261dd3b0f062f15dc55a432e91038e9331
 }
 
 header("refresh:0; url=index.php?mess=success");
