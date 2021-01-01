@@ -53,12 +53,12 @@ function loadTask($type)
                     echo '<span>' . $mysqldate . '</span>';
                 }
                 echo '</div>
-                    <div class="btns">
+                    <div class="btns" id="' . $task['duedate'] . '">
                         <div class="finEdit" id="' . $task['taskNo'] . '">
                             <button class="finished" name="finished">
                                 <i class="far fa-check-square"></i>
                             </button>
-                            <button class="edit" name="edit">
+                            <button class="edit" name="edit" id="' . $task['description'] . '">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                             <button class="delete" name="delete">

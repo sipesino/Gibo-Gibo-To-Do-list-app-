@@ -35,10 +35,10 @@
             </div>
         </div>
         <div class="header">
-            <?php $tasks = $conn->query("SELECT * FROM Tasks"); ?>
+            <?php $tasks = $conn->query("SELECT * FROM Tasks WHERE isFinished = 0"); ?>
             <h1 id="title"><a href="#">gibo</a></h1>
             <p class="totalTasks"><?php echo $tasks->rowCount() ?></p>
-            <h5>tasks</h5>
+            <h5>Active Tasks</h5>
             <button class="addBtn">+</button>
         </div>
         <div class="bg-modal">
@@ -52,6 +52,22 @@
                         <input type="datetime-local" name="duedate" id="duedate" />
                     </div>
                     <input type="submit" value="Add" class="add" />
+                    <input type="button" value="Cancel" class="cancel" />
+                </form>
+            </div>
+        </div>
+        <div class="bg-modal-edit">
+            <div class="modal-content-edit">
+                <h4>Edit Task</h4>
+                <form method="POST" action="edit.php" autocomplete="off">
+                    <input type="text" name="id" id="taskNo">
+                    <textarea name="description" id="descriptionE" cols="30" rows="10" placeholder="Description" required></textarea>
+                    <div class="duedate">
+                        <input type="checkbox" name="check" id="checkE" />
+                        <label name="" for="duedate" id="lbl">Due Date</label>
+                        <input type="datetime-local" name="duedate" id="duedateE" />
+                    </div>
+                    <input type="submit" value="Confirm" class="confirm" />
                     <input type="button" value="Cancel" class="cancel" />
                 </form>
             </div>
