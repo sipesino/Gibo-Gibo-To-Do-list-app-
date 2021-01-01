@@ -3,7 +3,8 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    background: #1b262c;
+    background: linear-gradient(45deg, #222d33, #27343b);
+    animation: gradient 6s infinite alternate;
     min-height: 100vh;
     background-size: cover;
     color: #e9eced;
@@ -173,7 +174,7 @@ ul {
 }
 
 .desc:hover {
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgba(100, 100, 100, 0.5);
 }
 
 .desc span {
@@ -312,5 +313,17 @@ button[name="delete"] {
     }
     body {
         margin: 0;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
     }
 }

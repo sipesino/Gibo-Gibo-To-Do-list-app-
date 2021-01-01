@@ -38,7 +38,7 @@
             <?php $tasks = $conn->query("SELECT * FROM Tasks WHERE isFinished = 0"); ?>
             <h1 id="title"><a href="#">gibo</a></h1>
             <p class="totalTasks"><?php echo $tasks->rowCount() ?></p>
-            <h5>Active Tasks</h5>
+            <h5>Active Task(s)</h5>
             <button class="addBtn">+</button>
         </div>
         <div class="bg-modal">
